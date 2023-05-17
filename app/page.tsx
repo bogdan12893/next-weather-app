@@ -1,3 +1,5 @@
+import SelectInput from "./components/SelectInput";
+
 async function getData() {
   const url: string | undefined = process.env.RAPID_API_URL;
   const options: any = {
@@ -26,6 +28,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen p-24">
       <h1>weather app</h1>
+      <SelectInput />
     </main>
   );
 }
