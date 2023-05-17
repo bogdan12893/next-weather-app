@@ -23,8 +23,6 @@ export default function Search({ onSearchChange }) {
         }),
       };
 
-      console.log(cities);
-
       return cities;
     } catch (error) {
       console.error(error);
