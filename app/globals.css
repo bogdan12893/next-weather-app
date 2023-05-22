@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.theme-switch button {
+  /* @apply bg-red-600 w-10 h-10; */
+}
+
 body {
-  @apply bg-slate-300;
+  @apply text-dk-purple dark:text-lh-pink;
 }

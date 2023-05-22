@@ -10,7 +10,7 @@ export default function Search({ onSearchChange }) {
   const loadOptions = async (inputValue: any) => {
     try {
       const response = await fetch(
-        `${geoUrl}/cities?minPopulation=200000&namePrefix=${inputValue}`,
+        `${geoUrl}/cities?minPopulation=50000&namePrefix=${inputValue}`,
         geoApiOptions
       );
       const result = await response.json();
@@ -36,6 +36,7 @@ export default function Search({ onSearchChange }) {
 
   return (
     <AsyncPaginate
+      className="mt-5"
       placeholder="Search for city"
       debounceTimeout={600}
       value={search}

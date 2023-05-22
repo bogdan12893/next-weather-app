@@ -18,7 +18,6 @@ export default function Forecast({ data }) {
     WEEK_DAYS.slice(0, dayInAWeek)
   );
 
-  console.log(data);
   return (
     <div>
       {data?.list.splice(0, 7).map((item: any, idx: any) => (

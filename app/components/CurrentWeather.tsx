@@ -3,16 +3,18 @@ import Image from "next/image";
 
 export default function CurrentWeather({ data }) {
   return (
-    <div className="current-weather bg-slate-400 rounded-lg p-4 shadow-lg my-10">
+    <div className="current-weather bg-lh-pink-1 dark:bg-dk-purple rounded-lg p-4 shadow-lg my-10">
       <div>
-        <h2 className="text-2xl font-semibold">{data.city}</h2>
+        <h2 className="text-2xl font-semibold">
+          {data.name}, {data.sys.country}
+        </h2>
         <p className="text-lg capitalize">{data.weather[0].description}</p>
       </div>
       <div className="flex gap-4 justify-between flex-wrap">
         <div className="flex gap-4">
           <Image
-            className="w-24 h-24 object-cover"
-            src={`/icons/${data?.weather[0].icon}.png`}
+            className="w-24 h-24 object-cover dark:invert opacity-60"
+            src={`/icons/svg/${data.weather[0].icon}.svg`}
             alt="icon"
             width={100}
             height={100}
@@ -25,7 +27,7 @@ export default function CurrentWeather({ data }) {
           </div>
         </div>
 
-        <div className="text-sm text-slate-700">
+        <div className="text-sm text-dk-maroon dark:text-dk-peach">
           <p>
             Humidity: <strong>{data.main.humidity} %</strong>
           </p>

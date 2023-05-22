@@ -12,6 +12,17 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      colors: {
+        "dk-navy": "#37306B",
+        "dk-purple": "#66347F",
+        "dk-maroon": "#9E4784",
+        "dk-peach": "#D27685",
+        "lh-white": "#F9F5F6",
+        "lh-cream": "#F8E8EE",
+        "lh-pink": "#FDCEDF",
+        "lh-pink-1": "#F2BED1",
+      },
     },
 
     container: {
@@ -31,4 +42,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: "class",
 };
