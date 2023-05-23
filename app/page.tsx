@@ -84,10 +84,12 @@ export default function Home() {
     <div>
       <main className="container min-h-screen">
         <Search onSearchChange={handleOnSearchChange} />
-        {!currentWeather && locationError && <p>{locationError}</p>}
+        {!currentWeather && locationError && (
+          <p className="text-center p-3">{locationError}</p>
+        )}
 
         {loading ? (
-          <p>Loading...</p>
+          <p className="text-center p-3">Loading...</p>
         ) : (
           <div>
             {currentWeather && <CurrentWeather data={currentWeather} />}
