@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import CurrentWeather from "./components/CurrentWeather";
 import Search from "./components/Search";
 import Forecast from "./components/Forecast";
+import { OpenWeatherCurrent } from "./interfaces/OpenWeatherCurrent.interface";
+import { OpenWeatherForecast } from "./interfaces/OpenWeatherForecast.interface";
 
 type SearchDataType = {
   value: string;
@@ -11,8 +13,9 @@ type SearchDataType = {
 };
 
 export default function Home() {
-  const [currentWeather, setCurrentWeather] = useState(null);
-  const [forecast, setForecast] = useState(null);
+  const [currentWeather, setCurrentWeather] =
+    useState<OpenWeatherCurrent | null>(null);
+  const [forecast, setForecast] = useState<OpenWeatherForecast | null>(null);
   const [locationError, setLocatioNError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -92,8 +95,8 @@ export default function Home() {
           <p className="text-center p-3">Loading...</p>
         ) : (
           <div>
-            {currentWeather && <CurrentWeather data={currentWeather} />}
-            {forecast && <Forecast data={forecast} />}
+            {currentWeather && <CurrentWeather {...currentWeather} />}
+            {forecast && <Forecast {...forecast} />}
           </div>
         )}
       </main>

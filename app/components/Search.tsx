@@ -4,10 +4,10 @@ import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoUrl, geoApiOptions } from "../services/api";
 
-export default function Search({ onSearchChange }) {
+export default function Search({ onSearchChange }: any) {
   const [search, setSearch] = useState(null);
 
-  const loadOptions = async (inputValue: any) => {
+  const loadOptions: any = async (inputValue: string) => {
     try {
       const response = await fetch(
         `${geoUrl}/cities?minPopulation=50000&namePrefix=${inputValue}`,
